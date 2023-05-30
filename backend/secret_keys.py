@@ -1,11 +1,12 @@
 import os
+import steamlit as st
 
 #Cohere client key for embeddings
-COHERE_CLIENT_KEY = os.environ["COHERE_KEY"]
+COHERE_CLIENT_KEY = st.secrets["COHERE_KEY"]
 
 #Pinecone vector db for storing embeddings
-PINECONE_KEY = os.environ["PINECONE_KEY"]
-PINECONE_ENV = os.environ["PINECONE_ENV"]
+PINECONE_KEY = st.secrets["PINECONE_KEY"]
+PINECONE_ENV = st.secrets["PINECONE_ENV"]
 
 #openai key for model api
-OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
