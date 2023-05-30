@@ -4,7 +4,7 @@
 
 The chatbot follows the following flow diagram which uses Cohere embedding model multilingual-22-12 and OpenAI's GPT3.5 API for generation and pincone as vector database for context. For handling context and vectors langchain is used.
 
-![Cohere Model](files\flow_app.png)
+![Cohere Model](files/flow_app.png)
 
 ## Sources
 
