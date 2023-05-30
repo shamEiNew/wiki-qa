@@ -1,5 +1,5 @@
 import os
-import steamlit as st
+import streamlit as st
 
 #Cohere client key for embeddings
 COHERE_CLIENT_KEY = st.secrets["COHERE_KEY"]
