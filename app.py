@@ -45,9 +45,14 @@ def run_app():
     col1, col2 = st.columns(2)
     options = ("Semantic Search", "Chat QA")
     with col1:
-        radio = st.radio("Select Response Type",options)
+        st.subheader("Response Type")
+        radio = st.radio("Select",options)
+        st.subheader("Flow of the chatbot")
+        st.image("files/flow_app.png", width=500)
+
 
     with col2:
+        st.subheader("Response")
         if radio == options[0]:
             text = st.text_input("Write your text here:")
             neighbors = st.text_input("Enter number of results to show:")
