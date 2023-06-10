@@ -41,6 +41,17 @@ def retrieval_qa(llm,vectorstore):
     )
     return qa
 
+# create the query embedding
+def similarity_search(co,index, query, neighbors=5, model='multilingual-22-12'):
+  xq = co.embed(
+      texts=[query],
+      model=model,
+      truncate='LEFT',
+      ).embeddings
+  res = index.query(xq, top_k=neighbors, include_metadata=True)
+  for match in res['matches']:
+    print(f"{match['score']:.2f}: {match['metadata']['text']}")
+
 
 
 
