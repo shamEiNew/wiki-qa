@@ -18,7 +18,7 @@ The repository consists of the following components:
 5. `llm_gpt_3_5_turbo`: Utilizes the OpenAI Large Language Model (LLM) GPT-3.5 Turbo to generate context-based answers.
 
 ### Components Graph
-![Flow Diagram](files\flow_app.png)
+![Flow Diagram](files/flow_app.png)
 
 
 
