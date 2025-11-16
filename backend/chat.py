@@ -1,11 +1,10 @@
 #import libraries
-from langchain.vectorstores import Pinecone
-from langchain.llms import OpenAI
-from langchain.embeddings import CohereEmbeddings
-from langchain.chat_models import ChatOpenAI
-from langchain.chains import RetrievalQA
-from langchain.chains import LLMChain, SimpleSequentialChain, RetrievalQA
-from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_cohere import CohereEmbeddings
+from langchain_classic.chains import RetrievalQA, LLMChain
+from langchain_classic import PromptTemplate
+from langchain_pinecone import PineconeVectorStore
+from pinecone import Pinecone
 from .secret_keys import *
 import pinecone
 
@@ -18,7 +17,7 @@ def co_embedding(model = "multilingual-22-12"):
 
 # switch back to normal index for langchain
 def vectorstores(index, embeddings, text_field="text"):
-    vectorstore = Pinecone(index, embeddings.embed_query,text_field)
+    vectorstore = PineconeVectorStore(index, embeddings,text_field)
     return vectorstore
 
 def llm_openai(model_name='gpt-3.5-turbo', temperature=0.0):
