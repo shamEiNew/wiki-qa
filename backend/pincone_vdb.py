@@ -66,7 +66,7 @@ from .secret_keys import *
 def create_pinecone_index(table_name, dimension=768, metric="cosine"):
     print("Initializing Pinecone (Serverless)...")
 
-    pc = Pinecone(api_key="f6e73bf8-43dc-4ce4-b29b-19430caa8543")
+    pc = Pinecone(api_key=PINECONE_KEY)
 
     existing_indexes = [idx["name"] for idx in pc.list_indexes()]
 
